@@ -3,6 +3,13 @@
 > 공공화장실 위치 기반 서비스
 ##### [Play Store](https://bit.ly/sailetand) / [App Store](https://apple.co/39jBNgP)
 
+## Getting Started
+
+### Prerequisites
+- NPM
+- yarn
+- CocoaPods
+
 ### Project folder structure
 ``` bash
 sailet
@@ -12,13 +19,6 @@ sailet
 ├── map         -------> # map for native app webview
 └── web         -------> # web for dynamic links & QR Code
 ```
-
-## Getting Started
-
-### Prerequisites
-- NPM
-- yarn
-- CocoaPods
 
 ### Run in development
 #### Run Native APP
@@ -63,6 +63,8 @@ yarn install
 # Running at localhost:3000
 yarn start
 ```
+
+
 
 
 
