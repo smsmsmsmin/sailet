@@ -1,0 +1,18 @@
+#place {
+    display: flex;
+    height: 100vh;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /*background-color: #ebebeb;*/
+}
+
+#place .container {
+    display: flex;
+    width: 29.7cm;
+    height: 21cm;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}

@@ -1,0 +1,64 @@
+type User {
+  id: ID! @id
+  uniqId: String @unique
+  email: String! @unique
+  name: String!
+  gender: String!
+  age: String!
+  profileImage: String! @default(value: "https://cdn.sailet.app/profile/default-profile.png")
+  images: [PlaceImage!]!
+  comments: [PlaceComment!]!
+  bookmark: [Place!]! @relation(name: "BookMark")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Place {
+  id: ID! @id
+  lat: Float!
+  lng: Float!
+  name: String!
+  management: String
+  contact: String
+  hours: String
+  status: String!
+  comments: [PlaceComment!]
+  images: [PlaceImage!] @relation(name: "PlaceImage")
+  bookmark: [User!] @relation(name: "BookMark")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type PlaceComment {
+  id: ID! @id
+  rating: Float!
+  content: String!
+  user: User!
+  place: Place!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type PlaceImage {
+  id: ID! @id
+  uri: String!
+  place: Place! @relation(name: "PlaceImage")
+  user: User!
+}
+
+type PlaceAddRequest {
+    id: ID! @id
+    name: String!
+    address: String!
+    images: Json!
+    user: User!
+}
+
+
+type PlaceEditRequest {
+    id: ID! @id
+    comment: String!
+    place: Place!
+    user: User!
+}
+

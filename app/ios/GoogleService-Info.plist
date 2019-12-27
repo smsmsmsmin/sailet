@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>710272237042-vtt4c68jgjtmu7ueg6nmmi69jtqqlqnr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.710272237042-vtt4c68jgjtmu7ueg6nmmi69jtqqlqnr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB7TPJqY-D4qwoCgyp73MX14UcEL84TKl8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>710272237042</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sailet</string>
+	<key>PROJECT_ID</key>
+	<string>sailet-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sailet-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:710272237042:ios:5d53b674c1372ccaacbf6b</string>
+	<key>DATABASE_URL</key>
+	<string>https://sailet-app.firebaseio.com</string>
+</dict>
+</plist>

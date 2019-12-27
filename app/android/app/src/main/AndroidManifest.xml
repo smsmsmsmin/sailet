@@ -1,0 +1,56 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.sailet">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+      android:largeHeap="true"
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round"
+      android:allowBackup="false"
+      android:theme="@style/AppTheme">
+
+      <activity
+        android:name=".MainActivity"
+        android:launchMode="singleTask"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="adjustResize">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
+          </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:host="sailet.page.link" android:scheme="http"/>
+            <data android:host="sailet.page.link" android:scheme="https"/>
+            <data android:host="sailet.app" android:scheme="http"/>
+            <data android:host="sailet.app" android:scheme="https"/>
+            <data android:host="link.sailet.app" android:scheme="http"/>
+            <data android:host="link.sailet.app" android:scheme="https"/>
+        </intent-filter>
+          <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+              <data android:scheme="sailet" />
+          </intent-filter>
+      </activity>
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+        <meta-data
+                android:name="com.naver.maps.map.CLIENT_ID"
+                android:value="ddo62aa5gr" />
+        <meta-data android:name="com.naver.sdk.ClientId" android:value="lN7YYqBlMUaCufe_J_Vy"/>
+        <meta-data android:name="com.naver.sdk.ClientSecret" android:value="NnfGsBD3XB" />
+    </application>
+
+</manifest>

@@ -1,0 +1,166 @@
+scalar Json
+scalar DateTime
+
+type Query {
+  me: User
+  places(where: PlaceWhereInput): [Place]!
+  place(id: ID!): Place
+  loadPlaces(
+    swlat: Float!
+    swlng: Float!
+    nelat: Float!
+    nelng: Float!
+  ): [Place!]
+  loadBookmark: [Place!]!
+  loadPlace(placeId: ID!): LoadPlace!
+  placeEditRequest: [PlaceEditRequest!]!
+}
+
+type Mutation {
+  naverAuth(token: String!): AuthPayload!
+  editName(name: String!): User!
+  editEmail(email: String!): User!
+  editProfileImage(uri: String!): User!
+  createPlace(
+    name: String!
+    lat: Float!
+    lng: Float!
+    management: String
+    contact: String
+    hours: String
+  ): Place!
+  createPlaceComment(
+    placeId: ID!
+    rating: Float!
+    comment: String!
+  ): PlaceComment!
+  newRating(
+    placeId: ID!
+    status: Int!
+    comment: String!
+    images: Json
+    rating: Int
+  ): Place!
+  createPlaceEditRequest(placeId: ID!, comment: String!): PlaceEditRequest!
+  createPlaceAddRequest(
+    name: String!
+    address: String!
+    images: Json!
+  ): PlaceAddRequest!
+  addBookmark(placeId: ID!): Place!
+  removeBookmark(placeId: ID!): Place!
+  deletePlaceComment(id: ID!): PlaceComment!
+  deletePlaceImage(id: ID!): PlaceImage!
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  uniqId: String!
+  gender: String!
+  age: String!
+  email: String!
+  name: String!
+  profileImage: String!
+  comments: [PlaceComment!]!
+  bookmark: [Place!]!
+  images: [PlaceImage!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Place {
+  id: ID!
+  lat: Float!
+  lng: Float!
+  name: String!
+  management: String
+  contact: String
+  hours: String
+  status: String!
+  comments(
+    orderBy: PlaceCommentOrderByInput
+    first: Int
+    after: Int
+  ): [PlaceComment!]
+  images: [PlaceImage!]
+  bookmark: [User!]
+  createdAt: String!
+  updatedAt: String!
+}
+
+type PlaceComment {
+  id: ID!
+  rating: Float!
+  content: String!
+  user: User!
+  place: Place!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type PlaceImage {
+  id: ID!
+  uri: String!
+  place: Place!
+  user: User!
+}
+
+type PlaceAddRequest {
+  id: ID!
+  name: String!
+  address: String!
+  images: Json!
+  user: User!
+}
+
+type PlaceEditRequest {
+  id: ID!
+  comment: String!
+  place: Place!
+  user: User!
+}
+
+type LoadPlace {
+  id: String!
+  lat: Float!
+  lng: Float!
+  name: String!
+  status: String!
+  rating: Float!
+  images: Json!
+  comments: Json!
+  updatedAt: String!
+  bookmark: Boolean!
+}
+
+enum PlaceCommentOrderByInput {
+  id_ASC
+  id_DESC
+  rating_ASC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+}
+
+input PlaceWhereInput {
+  code: String
+  code_not: String
+  code_in: [String!]
+  code_not_in: [String!]
+  code_lt: String
+  code_lte: String
+  code_gt: String
+  code_gte: String
+  code_contains: String
+  code_not_contains: String
+  code_starts_with: String
+  code_not_starts_with: String
+  code_ends_with: String
+  code_not_ends_with: String
+}

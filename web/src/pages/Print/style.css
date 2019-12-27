@@ -1,0 +1,14 @@
+#print {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#print .container {
+  display: flex;
+  width: 29.7cm;
+  height: 21cm;
+  background-color: white;
+}

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "710272237042",
+    "firebase_url": "https://sailet-app.firebaseio.com",
+    "project_id": "sailet-app",
+    "storage_bucket": "sailet-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710272237042:android:a64d7a990ffc567aacbf6b",
+        "android_client_info": {
+          "package_name": "com.sailet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710272237042-m48dhs6au7hh0jocii44p3lhj36r3951.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy1Lc2BYmbh-JVPcjvt2Mz1xuNK_X1kPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710272237042-m48dhs6au7hh0jocii44p3lhj36r3951.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710272237042-vtt4c68jgjtmu7ueg6nmmi69jtqqlqnr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sailet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

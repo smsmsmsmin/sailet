@@ -1,0 +1,9 @@
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.marker {
+  height: 200px;
+}

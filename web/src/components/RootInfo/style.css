@@ -1,0 +1,23 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 100px;
+}
+
+.black {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#place, #root .black {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}

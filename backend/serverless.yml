@@ -1,0 +1,43 @@
+org: yooonspace
+app: sailet-api
+service: aws-lambda
+
+plugins:
+  - serverless-offline
+  - serverless-domain-manager
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: ap-northeast-2
+  profile: sailet-serverless
+  environment:
+    PRISMA_SECRET: ${self:custom.environment.PRISMA_SECRET}
+    APP_SECRET: ${self:custom.environment.APP_SECRET}
+    PRISMA_MANAGEMENT_API_SECRET: ${self:custom.environment.PRISMA_MANAGEMENT_API_SECRET}
+
+custom:
+  environment: ${file(env.yml):default}
+  customDomain:
+    domainName: api.sailet.app
+    stage: dev
+    basePath: ""
+    certificateName: "sailet.app"
+    createRoute53Record: true
+    securityPolicy: tls_1_2
+
+functions:
+  graphql:
+    handler: handler.server
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+  redirect:
+    handler: handler.redirect
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
